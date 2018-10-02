@@ -1,0 +1,8 @@
+# ignore everything
+*
+
+# except for:
+!/public/**
+!/server/**
+!package.json
+!yarn.lock

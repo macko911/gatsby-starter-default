@@ -1,32 +1,42 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-starter-mfg",
+  "description": "MADFINGER Games Gatsby starter",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Matej Vobornik <mvobornik@madfingergames.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macko911/gatsby-starter-mfg"
+  },
   "dependencies": {
+    "esm": "^3.0.84",
+    "express": "^4.16.3",
     "gatsby": "^2.0.0",
-    "gatsby-plugin-manifest": "^2.0.2",
-    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-compile-es6-packages": "^1.0.6",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-resolve-src": "^2.0.0-beta.1",
+    "gatsby-plugin-sass": "^2.0.1",
+    "mfg": "../../common",
     "react": "^16.5.1",
+    "react-click-outside": "^3.0.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.6.0",
+    "eslint-plugin-react": "^7.11.1",
+    "node-sass": "^4.9.3",
     "prettier": "^1.14.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "mfg dev",
+    "deploy": "mfg deploy",
+    "format": "prettier --write 'src/**/*.js' && eslint --fix 'src/**/*.js'",
+    "publish": "yarn build && yarn deploy",
+    "publish:surge": "yarn build && surge ./public --domain mfg-test.surge.sh",
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
