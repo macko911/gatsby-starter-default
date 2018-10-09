@@ -9,14 +9,12 @@
     "url": "https://github.com/macko911/gatsby-starter-mfg"
   },
   "dependencies": {
-    "esm": "^3.0.84",
-    "express": "^4.16.3",
     "gatsby": "^2.0.0",
     "gatsby-plugin-compile-es6-packages": "^1.0.6",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-resolve-src": "^2.0.0-beta.1",
     "gatsby-plugin-sass": "^2.0.1",
-    "mfg": "../../common",
+    "mfg": "https://macko911@bitbucket.org/macko911/mfg-web-common.git",
     "react": "^16.5.1",
     "react-click-outside": "^3.0.1",
     "react-dom": "^16.5.1",
@@ -35,8 +33,6 @@
     "deploy": "mfg deploy",
     "format": "prettier --write 'src/**/*.js' && eslint --fix 'src/**/*.js'",
     "publish": "yarn build && yarn deploy",
-    "publish:surge": "yarn build && surge ./public --domain mfg-test.surge.sh",
-    "start": "node server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "mfg start"
   }
 }
